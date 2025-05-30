@@ -1,0 +1,194 @@
+### API Testing Endpoints
+@baseUrl = http://localhost:3000
+
+### ==============================
+### User Endpoints
+### ==============================
+
+### Get all users
+GET {{baseUrl}}/user
+
+### Get user by ID
+GET {{baseUrl}}/user/3fa85f64-5717-4562-b3fc-2c963f66afa6
+
+### Create user
+POST {{baseUrl}}/user
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "password": "password123"
+}
+
+### Update user
+PATCH {{baseUrl}}/user/3fa85f64-5717-4562-b3fc-2c963f66afa6
+Content-Type: application/json
+
+{
+  "name": "John Smith"
+}
+
+### Delete user
+DELETE {{baseUrl}}/user/3fa85f64-5717-4562-b3fc-2c963f66afa6
+
+### ==============================
+### Profile Endpoints
+### ==============================
+
+### Get all profiles
+GET {{baseUrl}}/profile
+
+### Get profile by ID
+GET {{baseUrl}}/profile/3fa85f64-5717-4562-b3fc-2c963f66afa6
+
+### Create profile
+POST {{baseUrl}}/profile
+Content-Type: application/json
+
+{
+  "userId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "bio": "Software developer with 5 years of experience",
+  "address": "123 Main Street, City",
+  "phoneNumber": "555-1234"
+}
+
+### Update profile
+PATCH {{baseUrl}}/profile/3fa85f64-5717-4562-b3fc-2c963f66afa6
+Content-Type: application/json
+
+{
+  "bio": "Senior software developer with 6 years of experience"
+}
+
+### Delete profile
+DELETE {{baseUrl}}/profile/3fa85f64-5717-4562-b3fc-2c963f66afa6
+
+### ==============================
+### Author Endpoints
+### ==============================
+
+### Get all authors
+GET {{baseUrl}}/author
+
+### Get author by ID
+GET {{baseUrl}}/author/3fa85f64-5717-4562-b3fc-2c963f66afa6
+
+### Create author
+POST {{baseUrl}}/author
+Content-Type: application/json
+
+{
+  "name": "J.K. Rowling",
+  "bio": "British author best known for the Harry Potter series",
+  "nationality": "British",
+  "birthDate": "1965-07-31"
+}
+
+### Update author
+PATCH {{baseUrl}}/author/3fa85f64-5717-4562-b3fc-2c963f66afa6
+Content-Type: application/json
+
+{
+  "bio": "British author of the Harry Potter fantasy series and other works"
+}
+
+### Delete author
+DELETE {{baseUrl}}/author/3fa85f64-5717-4562-b3fc-2c963f66afa6
+
+### ==============================
+### Book Endpoints
+### ==============================
+
+### Get all books
+GET {{baseUrl}}/book
+
+### Get book by ID
+GET {{baseUrl}}/book/3fa85f64-5717-4562-b3fc-2c963f66afa6
+
+### Create book
+POST {{baseUrl}}/book
+Content-Type: application/json
+
+{
+  "title": "Harry Potter and the Philosopher's Stone",
+  "description": "The first novel in the Harry Potter series",
+  "publicationYear": "1997-06-26",
+  "isAvailable": true,
+  "author": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+}
+
+### Update book
+PATCH {{baseUrl}}/book/3fa85f64-5717-4562-b3fc-2c963f66afa6
+Content-Type: application/json
+
+{
+  "isAvailable": false
+}
+
+### Delete book
+DELETE {{baseUrl}}/book/3fa85f64-5717-4562-b3fc-2c963f66afa6
+
+### ==============================
+### Category Endpoints
+### ==============================
+
+### Get all categories
+GET {{baseUrl}}/category
+
+### Get category by ID
+GET {{baseUrl}}/category/3fa85f64-5717-4562-b3fc-2c963f66afa6
+
+### Create category
+POST {{baseUrl}}/category
+Content-Type: application/json
+
+{
+  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "name": "Fantasy",
+  "description": "Fiction that features magical and supernatural elements"
+}
+
+### Update category
+PATCH {{baseUrl}}/category/3fa85f64-5717-4562-b3fc-2c963f66afa6
+Content-Type: application/json
+
+{
+  "description": "Fiction with magical elements and otherworldly settings"
+}
+
+### Delete category
+DELETE {{baseUrl}}/category/3fa85f64-5717-4562-b3fc-2c963f66afa6
+
+### ==============================
+### Book Review Endpoints
+### ==============================
+
+### Get all book reviews
+GET {{baseUrl}}/bookreview
+
+### Get book review by ID
+GET {{baseUrl}}/bookreview/3fa85f64-5717-4562-b3fc-2c963f66afa6
+
+### Create book review
+POST {{baseUrl}}/bookreview
+Content-Type: application/json
+
+{
+  "content": "An excellent book that captivates readers of all ages!",
+  "rating": 5,
+  "bookId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "reviewer": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+}
+
+### Update book review
+PATCH {{baseUrl}}/bookreview/3fa85f64-5717-4562-b3fc-2c963f66afa6
+Content-Type: application/json
+
+{
+  "content": "A truly magical book that captivates readers of all ages!",
+  "rating": 5
+}
+
+### Delete book review
+DELETE {{baseUrl}}/bookreview/3fa85f64-5717-4562-b3fc-2c963f66afa6
