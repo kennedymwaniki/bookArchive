@@ -1,6 +1,6 @@
-import { Author } from 'src/author/entities/author.entity';
-import { Bookreview } from 'src/bookreview/entities/bookreview.entity';
-import { Category } from 'src/category/entities/category.entity';
+import { Author } from '../../author/entities/author.entity';
+import { Bookreview } from '../../bookreview/entities/bookreview.entity';
+import { Category } from '../../category/entities/category.entity';
 import {
   Column,
   Entity,

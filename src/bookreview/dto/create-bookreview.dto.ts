@@ -20,4 +20,8 @@ export class CreateBookreviewDto {
   @IsString()
   @IsNotEmpty()
   bookId: string;
+
+  @IsString()
+  @IsNotEmpty()
+  userId: string;
 }

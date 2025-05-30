@@ -18,14 +18,14 @@ export class UserService {
 
   async findAll() {
     return await this.userRepository.find({
-      relations: ['booksReviews', 'profile'],
+      relations: ['bookReviews', 'profile'],
     });
   }
 
   async findOne(id: string) {
     const user = await this.userRepository.findOne({
       where: { id },
-      relations: ['booksReviews', 'profile'],
+      relations: ['bookReviews', 'profile'],
     });
     if (!user) {
       throw new BadRequestException(`User with ID ${id} not found`);
@@ -36,7 +36,7 @@ export class UserService {
   async update(id: string, updateUserDto: UpdateUserDto) {
     const user = await this.userRepository.findOne({
       where: { id },
-      relations: ['booksReviews', 'profile'],
+      relations: ['bookReviews', 'profile'],
     });
     if (!user) {
       throw new BadRequestException(`User with ID ${id} not found`);

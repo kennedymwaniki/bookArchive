@@ -1,5 +1,5 @@
-import { Bookreview } from 'src/bookreview/entities/bookreview.entity';
-import { Profile } from 'src/profile/entities/profile.entity';
+import { Bookreview } from '../../bookreview/entities/bookreview.entity';
+import { Profile } from '../../profile/entities/profile.entity';
 import {
   Column,
   CreateDateColumn,

@@ -1,6 +1,5 @@
 import {
   IsDateString,
-  IsEmail,
   IsInt,
   IsNotEmpty,
   IsOptional,
@@ -19,12 +18,6 @@ export class CreateAuthorDto {
   @IsString()
   @MaxLength(500)
   bio: string;
-
-  @IsString()
-  @IsNotEmpty()
-  @IsEmail()
-  @MaxLength(100)
-  email: string;
 
   @IsDateString()
   @IsOptional()
