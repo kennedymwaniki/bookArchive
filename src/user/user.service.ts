@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { Repository } from 'typeorm';
@@ -26,7 +26,7 @@ export class UserService {
       relations: ['booksReviews', 'profile'],
     });
     if (!user) {
-      throw new Error(`User with ID ${id} not found`);
+      throw new BadRequestException(`User with ID ${id} not found`);
     }
     return user;
   }
@@ -37,7 +37,7 @@ export class UserService {
       relations: ['booksReviews'],
     });
     if (!user) {
-      throw new Error(`User with ID ${id} not found`);
+      throw new BadRequestException(`User with ID ${id} not found`);
     }
     await this.userRepository.update(id, updateUserDto);
     return this.findOne(id);
@@ -48,7 +48,7 @@ export class UserService {
       where: { id: id.toString() },
     });
     if (!user) {
-      throw new Error(`User with ID ${id} not found`);
+      throw new BadRequestException(`User with ID ${id} not found`);
     }
     await this.userRepository.remove(user);
     return {

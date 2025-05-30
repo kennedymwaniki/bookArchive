@@ -4,7 +4,7 @@ import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Profile {
   @PrimaryGeneratedColumn('uuid')
-  id: number;
+  id: string;
 
   @Column({
     type: 'text',
@@ -12,10 +12,10 @@ export class Profile {
   bio?: string;
 
   @Column({
-    type: 'string',
+    type: 'text',
     nullable: true,
   })
-  avatar?: string;
+  profileImage?: string;
 
   @Column({
     type: 'timestamp',
@@ -24,7 +24,7 @@ export class Profile {
   dob: string;
 
   @Column({
-    type: 'string',
+    type: 'varchar',
   })
   location: string;
 

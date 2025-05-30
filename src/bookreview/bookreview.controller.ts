@@ -27,7 +27,7 @@ export class BookreviewController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.bookreviewService.findOne(+id);
+    return this.bookreviewService.findOne(id);
   }
 
   @Patch(':id')
@@ -35,11 +35,11 @@ export class BookreviewController {
     @Param('id') id: string,
     @Body() updateBookreviewDto: UpdateBookreviewDto,
   ) {
-    return this.bookreviewService.update(+id, updateBookreviewDto);
+    return this.bookreviewService.update(id, updateBookreviewDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.bookreviewService.remove(+id);
+    return this.bookreviewService.remove(id);
   }
 }

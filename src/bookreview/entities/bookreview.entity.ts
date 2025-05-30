@@ -4,6 +4,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinTable,
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
@@ -32,5 +33,6 @@ export class Bookreview {
   reviewer: User;
 
   @ManyToOne(() => Book, (book) => book.bookReviews)
+  @JoinTable()
   book: Book;
 }

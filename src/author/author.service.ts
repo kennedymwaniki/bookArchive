@@ -3,10 +3,14 @@ import { CreateAuthorDto } from './dto/create-author.dto';
 import { UpdateAuthorDto } from './dto/update-author.dto';
 import { Repository } from 'typeorm';
 import { Author } from './entities/author.entity';
+import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class AuthorService {
-  constructor(private readonly authorRepository: Repository<Author>) {}
+  constructor(
+    @InjectRepository(Author)
+    private readonly authorRepository: Repository<Author>,
+  ) {}
 
   async create(createAuthorDto: CreateAuthorDto) {
     const author = this.authorRepository.create(createAuthorDto);

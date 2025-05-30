@@ -16,4 +16,7 @@ export class CreateProfileDto {
   @IsDateString()
   @IsOptional()
   dob: string;
+
+  @IsString()
+  userId: string;
 }
