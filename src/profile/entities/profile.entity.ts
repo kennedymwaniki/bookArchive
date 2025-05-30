@@ -1,5 +1,11 @@
 import { User } from '../../user/entities/user.entity';
-import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity()
 export class Profile {
@@ -8,6 +14,7 @@ export class Profile {
 
   @Column({
     type: 'text',
+    nullable: true,
   })
   bio?: string;
 
@@ -25,9 +32,11 @@ export class Profile {
 
   @Column({
     type: 'varchar',
+    nullable: true,
   })
   location: string;
 
   @OneToOne(() => User, (user) => user.profile)
+  @JoinColumn({ name: 'userId' })
   user: User;
 }

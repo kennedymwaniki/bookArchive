@@ -1,9 +1,9 @@
 import { Book } from '../../book/entities/book.entity';
-import { Column, Entity, ManyToMany, PrimaryColumn } from 'typeorm';
+import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Category {
-  @PrimaryColumn('uuid')
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()

@@ -1,3 +1,4 @@
+import { UserService } from 'src/user/user.service';
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { CreateBookreviewDto } from './dto/create-bookreview.dto';
 import { UpdateBookreviewDto } from './dto/update-bookreview.dto';
@@ -8,18 +9,27 @@ import { Bookreview } from './entities/bookreview.entity';
 
 @Injectable()
 export class BookreviewService {
-  @InjectRepository(Bookreview)
-  private readonly bookreviewRepository: Repository<Bookreview>;
-
-  private readonly bookService: BookService;
+  constructor(
+    @InjectRepository(Bookreview)
+    private readonly bookreviewRepository: Repository<Bookreview>,
+    private readonly bookService: BookService,
+    private readonly userService: UserService,
+  ) {}
   async create(createBookreviewDto: CreateBookreviewDto) {
     const book = await this.bookService.findOne(createBookreviewDto.bookId);
     if (!book) {
       throw new BadRequestException('Book not found');
     }
+
+    const user = await this.userService.findOne(createBookreviewDto.userId);
+    if (!user) {
+      throw new BadRequestException('User not found');
+    }
+    // Ensure the user is associated with the book review
     const bookreview = this.bookreviewRepository.create({
       ...createBookreviewDto,
       book: book,
+      reviewer: user,
     });
 
     return this.bookreviewRepository.save(bookreview);
@@ -61,3 +71,5 @@ export class BookreviewService {
     return { message: `Bookreview with ID ${id} removed successfully` };
   }
 }
+
+//! Bookreview Service
