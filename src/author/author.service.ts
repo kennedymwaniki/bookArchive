@@ -22,7 +22,7 @@ export class AuthorService {
       relations: ['books'],
     });
   }
-
+  //! This will be the same as the GET /authors/:id/books route
   async findOne(id: string) {
     const author = await this.authorRepository.findOne({
       where: { id },

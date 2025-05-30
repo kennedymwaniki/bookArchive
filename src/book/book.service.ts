@@ -49,4 +49,36 @@ export class BookService {
       message: 'Book has been deleted',
     };
   }
+
+  async search(filters: {
+    title?: string;
+    author?: string;
+    category?: string;
+  }) {
+    const queryBuilder = this.bookRepository.createQueryBuilder('book');
+
+    if (filters.title) {
+      queryBuilder.andWhere('book.title LIKE :title', {
+        title: `%${filters.title}%`,
+      });
+    }
+
+    if (filters.author) {
+      queryBuilder
+        .leftJoinAndSelect('book.author', 'author')
+        .andWhere('author.name LIKE :author', {
+          author: `%${filters.author}%`,
+        });
+    }
+
+    if (filters.category) {
+      queryBuilder
+        .leftJoinAndSelect('book.category', 'category')
+        .andWhere('category.name LIKE :category', {
+          category: `%${filters.category}%`,
+        });
+    }
+
+    return await queryBuilder.getMany();
+  }
 }

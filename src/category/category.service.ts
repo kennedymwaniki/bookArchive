@@ -18,11 +18,16 @@ export class CategoryService {
   }
 
   async findAll() {
-    return await this.categoryRepository.find();
+    return await this.categoryRepository.find({
+      relations: ['books'],
+    });
   }
-
+  //! this will be also be the same as the GET /categories/:id/books route
   async findOne(id: string) {
-    return await this.categoryRepository.findOne({ where: { id } });
+    return await this.categoryRepository.findOne({
+      where: { id },
+      relations: ['books'],
+    });
   }
 
   async update(id: string, updateCategoryDto: UpdateCategoryDto) {
