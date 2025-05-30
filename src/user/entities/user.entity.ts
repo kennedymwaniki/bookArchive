@@ -25,10 +25,16 @@ export class User {
   email: string;
 
   @Column({
-    type: 'boolean',
+    type: 'varchar',
     default: true,
   })
   password: string;
+
+  @Column({
+    type: 'boolean',
+    default: true,
+  })
+  isActive: boolean;
 
   @CreateDateColumn()
   createdAt: string;

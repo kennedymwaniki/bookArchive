@@ -1,18 +1,18 @@
 ### API Testing Endpoints
-@baseUrl = http://localhost:3000
+@url = http://localhost:3000
 
 ### ==============================
 ### User Endpoints
 ### ==============================
 
 ### Get all users
-GET {{baseUrl}}/user
+GET {{url}}/user
 
 ### Get user by ID
-GET {{baseUrl}}/user/3fa85f64-5717-4562-b3fc-2c963f66afa6
+GET {{url}}/user/3fa85f64-5717-4562-b3fc-2c963f66afa6
 
 ### Create user
-POST {{baseUrl}}/user
+POST {{url}}/user
 Content-Type: application/json
 
 {
@@ -22,7 +22,7 @@ Content-Type: application/json
 }
 
 ### Update user
-PATCH {{baseUrl}}/user/3fa85f64-5717-4562-b3fc-2c963f66afa6
+PATCH {{url}}/user/3fa85f64-5717-4562-b3fc-2c963f66afa6
 Content-Type: application/json
 
 {
@@ -30,20 +30,20 @@ Content-Type: application/json
 }
 
 ### Delete user
-DELETE {{baseUrl}}/user/3fa85f64-5717-4562-b3fc-2c963f66afa6
+DELETE {{url}}/user/3fa85f64-5717-4562-b3fc-2c963f66afa6
 
 ### ==============================
 ### Profile Endpoints
 ### ==============================
 
 ### Get all profiles
-GET {{baseUrl}}/profile
+GET {{url}}/profile
 
 ### Get profile by ID
-GET {{baseUrl}}/profile/3fa85f64-5717-4562-b3fc-2c963f66afa6
+GET {{url}}/profile/3fa85f64-5717-4562-b3fc-2c963f66afa6
 
 ### Create profile
-POST {{baseUrl}}/profile
+POST {{url}}/profile
 Content-Type: application/json
 
 {
@@ -54,7 +54,7 @@ Content-Type: application/json
 }
 
 ### Update profile
-PATCH {{baseUrl}}/profile/3fa85f64-5717-4562-b3fc-2c963f66afa6
+PATCH {{url}}/profile/3fa85f64-5717-4562-b3fc-2c963f66afa6
 Content-Type: application/json
 
 {
@@ -62,20 +62,20 @@ Content-Type: application/json
 }
 
 ### Delete profile
-DELETE {{baseUrl}}/profile/3fa85f64-5717-4562-b3fc-2c963f66afa6
+DELETE {{url}}/profile/3fa85f64-5717-4562-b3fc-2c963f66afa6
 
 ### ==============================
 ### Author Endpoints
 ### ==============================
 
 ### Get all authors
-GET {{baseUrl}}/author
+GET {{url}}/author
 
 ### Get author by ID
-GET {{baseUrl}}/author/3fa85f64-5717-4562-b3fc-2c963f66afa6
+GET {{url}}/author/3fa85f64-5717-4562-b3fc-2c963f66afa6
 
 ### Create author
-POST {{baseUrl}}/author
+POST {{url}}/author
 Content-Type: application/json
 
 {
@@ -86,7 +86,7 @@ Content-Type: application/json
 }
 
 ### Update author
-PATCH {{baseUrl}}/author/3fa85f64-5717-4562-b3fc-2c963f66afa6
+PATCH {{url}}/author/3fa85f64-5717-4562-b3fc-2c963f66afa6
 Content-Type: application/json
 
 {
@@ -94,20 +94,20 @@ Content-Type: application/json
 }
 
 ### Delete author
-DELETE {{baseUrl}}/author/3fa85f64-5717-4562-b3fc-2c963f66afa6
+DELETE {{url}}/author/3fa85f64-5717-4562-b3fc-2c963f66afa6
 
 ### ==============================
 ### Book Endpoints
 ### ==============================
 
 ### Get all books
-GET {{baseUrl}}/book
+GET {{url}}/book
 
 ### Get book by ID
-GET {{baseUrl}}/book/3fa85f64-5717-4562-b3fc-2c963f66afa6
+GET {{url}}/book/3fa85f64-5717-4562-b3fc-2c963f66afa6
 
 ### Create book
-POST {{baseUrl}}/book
+POST {{url}}/book
 Content-Type: application/json
 
 {
@@ -119,7 +119,7 @@ Content-Type: application/json
 }
 
 ### Update book
-PATCH {{baseUrl}}/book/3fa85f64-5717-4562-b3fc-2c963f66afa6
+PATCH {{url}}/book/3fa85f64-5717-4562-b3fc-2c963f66afa6
 Content-Type: application/json
 
 {
@@ -127,20 +127,20 @@ Content-Type: application/json
 }
 
 ### Delete book
-DELETE {{baseUrl}}/book/3fa85f64-5717-4562-b3fc-2c963f66afa6
+DELETE {{url}}/book/3fa85f64-5717-4562-b3fc-2c963f66afa6
 
 ### ==============================
 ### Category Endpoints
 ### ==============================
 
 ### Get all categories
-GET {{baseUrl}}/category
+GET {{url}}/category
 
 ### Get category by ID
-GET {{baseUrl}}/category/3fa85f64-5717-4562-b3fc-2c963f66afa6
+GET {{url}}/category/3fa85f64-5717-4562-b3fc-2c963f66afa6
 
 ### Create category
-POST {{baseUrl}}/category
+POST {{url}}/category
 Content-Type: application/json
 
 {
@@ -150,7 +150,7 @@ Content-Type: application/json
 }
 
 ### Update category
-PATCH {{baseUrl}}/category/3fa85f64-5717-4562-b3fc-2c963f66afa6
+PATCH {{url}}/category/3fa85f64-5717-4562-b3fc-2c963f66afa6
 Content-Type: application/json
 
 {
@@ -158,20 +158,20 @@ Content-Type: application/json
 }
 
 ### Delete category
-DELETE {{baseUrl}}/category/3fa85f64-5717-4562-b3fc-2c963f66afa6
+DELETE {{url}}/category/3fa85f64-5717-4562-b3fc-2c963f66afa6
 
 ### ==============================
 ### Book Review Endpoints
 ### ==============================
 
 ### Get all book reviews
-GET {{baseUrl}}/bookreview
+GET {{url}}/bookreview
 
 ### Get book review by ID
-GET {{baseUrl}}/bookreview/3fa85f64-5717-4562-b3fc-2c963f66afa6
+GET {{url}}/bookreview/3fa85f64-5717-4562-b3fc-2c963f66afa6
 
 ### Create book review
-POST {{baseUrl}}/bookreview
+POST {{url}}/bookreview
 Content-Type: application/json
 
 {
@@ -182,7 +182,7 @@ Content-Type: application/json
 }
 
 ### Update book review
-PATCH {{baseUrl}}/bookreview/3fa85f64-5717-4562-b3fc-2c963f66afa6
+PATCH {{url}}/bookreview/3fa85f64-5717-4562-b3fc-2c963f66afa6
 Content-Type: application/json
 
 {
@@ -191,4 +191,4 @@ Content-Type: application/json
 }
 
 ### Delete book review
-DELETE {{baseUrl}}/bookreview/3fa85f64-5717-4562-b3fc-2c963f66afa6
+DELETE {{url}}/bookreview/3fa85f64-5717-4562-b3fc-2c963f66afa6

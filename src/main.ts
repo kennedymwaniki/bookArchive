@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common/pipes';
+// import { HttpExceptionFilter } from './httpfilter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -12,6 +13,8 @@ async function bootstrap() {
       transform: true, // transform the request body to be an instance of the DTO class after validation and not a plain object
     }),
   );
+
+  // app.useGlobalFilters(new HttpExceptionFilter());
   await app.listen(process.env.PORT ?? 3000);
   console.log(`Application is running on: ${await app.getUrl()}`);
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
