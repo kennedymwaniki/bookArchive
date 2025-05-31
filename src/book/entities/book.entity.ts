@@ -4,6 +4,7 @@ import { Category } from '../../category/entities/category.entity';
 import {
   Column,
   Entity,
+  JoinTable,
   ManyToMany,
   ManyToOne,
   OneToMany,
@@ -36,6 +37,7 @@ export class Book {
   reviews: Bookreview[];
 
   @ManyToMany(() => Category, (category) => category.books)
+  @JoinTable()
   categories: Category[];
 
   @ManyToOne(() => Author, (author) => author.books)
