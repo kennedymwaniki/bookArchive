@@ -32,7 +32,7 @@ export class Bookreview {
   @ManyToOne(() => User, (user) => user.bookReviews)
   reviewer: User;
 
-  @ManyToOne(() => Book, (book) => book.bookReviews)
+  @ManyToOne(() => Book, (book) => book.reviews)
   @JoinTable()
   book: Book;
 }

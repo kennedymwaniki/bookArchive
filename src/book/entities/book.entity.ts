@@ -33,7 +33,7 @@ export class Book {
   isAvailable: boolean;
 
   @OneToMany(() => Bookreview, (bookreview) => bookreview.book)
-  bookReviews: Bookreview[];
+  reviews: Bookreview[];
 
   @ManyToMany(() => Category, (category) => category.books)
   categories: Category[];

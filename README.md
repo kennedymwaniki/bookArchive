@@ -1,98 +1,356 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+  <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="BookWorm API Logo" />
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<h1 align="center">BookWorm API</h1>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+<p align="center">A NestJS-powered RESTful API for managing a digital library system with users, books, authors, categories, profiles, and reviews.</p>
+
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/NestJS-11.0.1-red.svg" alt="NestJS Version" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/TypeORM-0.3.24-blue.svg" alt="TypeORM Version" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/PostgreSQL-Latest-blue.svg" alt="PostgreSQL" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/API-REST-green.svg" alt="API Type" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License" /></a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+BookWorm API is a comprehensive backend system for a digital library platform. It allows users to browse books, leave reviews, and interact with various literary content. Built with NestJS and TypeORM, it offers robust entity relationships and RESTful endpoints for all necessary operations.
 
-## Project setup
+## Key Features
+
+- **User Management**: Create, update, and manage user accounts
+- **Book Catalog**: Comprehensive book listings with details and availability
+- **Author Profiles**: Information about book authors
+- **Categories**: Book categorization system
+- **Reviews & Ratings**: User feedback system for books
+- **User Profiles**: Extended user information
+- **Data Seeding**: Automatic creation of sample data
+- **API Documentation**: Detailed endpoint documentation
+
+## Tech Stack
+
+- **Framework**: NestJS
+- **Database**: PostgreSQL
+- **ORM**: TypeORM
+- **Validation**: Class Validator / Class Transformer
+- **Development Tools**: TypeScript, ESLint, Prettier
+- **Testing**: Jest
+
+## Live API
+
+The API is currently deployed and available at:
+
+```
+https://bookworm-api.example.com
+```
+
+## Prerequisites
+
+Before getting started, ensure you have the following installed:
+
+- Node.js (v18 or later)
+- PNPM package manager
+- PostgreSQL database (local or cloud-hosted)
+
+## Environment Setup
+
+1. Create a `.env` file in the root directory with the following variables:
 
 ```bash
+# Database Configuration
+PGHPST=your_database_host
+PGUSER=your_database_user
+PGPASSWORD=your_database_password
+PGDATABASE=your_database_name
+DATABASE_PORT=5432
+
+# Application Configuration
+PORT=3000
+NODE_ENV=development
+```
+
+## Installation
+
+```bash
+# Install dependencies
 $ pnpm install
 ```
 
-## Compile and run the project
+## Running the Application
 
 ```bash
-# development
+# Development mode
 $ pnpm run start
 
-# watch mode
+# Watch mode (auto-reload on changes)
 $ pnpm run start:dev
 
-# production mode
+# Production mode
 $ pnpm run start:prod
 ```
 
-## Run tests
+## Database Seeding
+
+To populate your database with sample data:
 
 ```bash
-# unit tests
+# Seed the database with test data
+$ pnpm run seed
+```
+
+## Testing
+
+```bash
+# Unit tests
 $ pnpm run test
 
-# e2e tests
+# E2E tests
 $ pnpm run test:e2e
 
-# test coverage
+# Test coverage reports
 $ pnpm run test:cov
 ```
 
-## Deployment
+## API Endpoints
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+### User Endpoints
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+| Method | Endpoint    | Description       | Request Body                              |
+| ------ | ----------- | ----------------- | ----------------------------------------- |
+| GET    | `/user`     | Get all users     | -                                         |
+| GET    | `/user/:id` | Get user by ID    | -                                         |
+| POST   | `/user`     | Create a new user | `{ name, email, password }`               |
+| PATCH  | `/user/:id` | Update a user     | `{ name?, email?, password?, isActive? }` |
+| DELETE | `/user/:id` | Delete a user     | -                                         |
 
-```bash
-$ pnpm install -g @nestjs/mau
-$ mau deploy
+### Profile Endpoints
+
+| Method | Endpoint       | Description          | Request Body                   |
+| ------ | -------------- | -------------------- | ------------------------------ |
+| GET    | `/profile`     | Get all profiles     | -                              |
+| GET    | `/profile/:id` | Get profile by ID    | -                              |
+| POST   | `/profile`     | Create a new profile | `{ userId, bio, avatar, dob }` |
+| PATCH  | `/profile/:id` | Update a profile     | `{ bio?, avatar?, dob? }`      |
+| DELETE | `/profile/:id` | Delete a profile     | -                              |
+
+### Author Endpoints
+
+| Method | Endpoint      | Description         | Request Body                             |
+| ------ | ------------- | ------------------- | ---------------------------------------- |
+| GET    | `/author`     | Get all authors     | -                                        |
+| GET    | `/author/:id` | Get author by ID    | -                                        |
+| POST   | `/author`     | Create a new author | `{ name, bio, birthDate, isActive? }`    |
+| PATCH  | `/author/:id` | Update an author    | `{ name?, bio?, birthDate?, isActive? }` |
+| DELETE | `/author/:id` | Delete an author    | -                                        |
+
+### Book Endpoints
+
+| Method | Endpoint       | Description              | Request Body                                                                        |
+| ------ | -------------- | ------------------------ | ----------------------------------------------------------------------------------- |
+| GET    | `/book`        | Get all books            | -                                                                                   |
+| GET    | `/book/:id`    | Get book by ID           | -                                                                                   |
+| GET    | `/book/search` | Search books by criteria | Query params: `title`, `author`, `category`                                         |
+| POST   | `/book`        | Create a new book        | `{ title, description, publicationYear, authorId, categoryIds?, isAvailable? }`     |
+| PATCH  | `/book/:id`    | Update a book            | `{ title?, description?, publicationYear?, isAvailable?, authorId?, categoryIds? }` |
+| DELETE | `/book/:id`    | Delete a book            | -                                                                                   |
+
+### Category Endpoints
+
+| Method | Endpoint        | Description           | Request Body              |
+| ------ | --------------- | --------------------- | ------------------------- |
+| GET    | `/category`     | Get all categories    | -                         |
+| GET    | `/category/:id` | Get category by ID    | -                         |
+| POST   | `/category`     | Create a new category | `{ name, description }`   |
+| PATCH  | `/category/:id` | Update a category     | `{ name?, description? }` |
+| DELETE | `/category/:id` | Delete a category     | -                         |
+
+### Book Review Endpoints
+
+| Method | Endpoint          | Description              | Request Body                          |
+| ------ | ----------------- | ------------------------ | ------------------------------------- |
+| GET    | `/bookreview`     | Get all book reviews     | -                                     |
+| GET    | `/bookreview/:id` | Get book review by ID    | -                                     |
+| POST   | `/bookreview`     | Create a new book review | `{ content, rating, bookId, userId }` |
+| PATCH  | `/bookreview/:id` | Update a book review     | `{ content?, rating? }`               |
+| DELETE | `/bookreview/:id` | Delete a book review     | -                                     |
+
+## API Testing
+
+You can test the API endpoints using the provided `app.http` file which contains sample requests for all endpoints. If you're using VS Code, consider installing the "REST Client" extension to execute these requests directly from the editor.
+
+## Database Schema
+
+The application uses a relational database with the following entity relationships:
+
+### Core Entities
+
+- **User**: Base user account information
+- **Profile**: Extended user information (one-to-one with User)
+- **Author**: Information about book authors
+- **Book**: Book details with relations to Author and Categories
+- **Category**: Book categorization
+- **BookReview**: User reviews for books
+
+### Entity Relationships
+
+- User (1) ←→ (1) Profile
+- User (1) ←→ (n) BookReview
+- Author (1) ←→ (n) Book
+- Book (n) ←→ (m) Category
+- Book (1) ←→ (n) BookReview
+
+## Data Models
+
+### User Entity
+
+```typescript
+{
+  id: string; // UUID primary key
+  name: string; // User's full name
+  email: string; // Unique email address
+  password: string; // Hashed password (stored securely)
+  isActive: boolean; // Account status
+  createdAt: string; // Account creation timestamp
+}
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+### Profile Entity
 
-## Resources
+```typescript
+{
+  id: string; // UUID primary key
+  name: string; // Profile display name
+  bio: string; // User biography
+  avatar: string; // URL to profile image
+  dob: string; // Date of birth (YYYY-MM-DD)
+  userId: string; // Foreign key to User
+}
+```
 
-Check out a few resources that may come in handy when working with NestJS:
+### Author Entity
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+```typescript
+{
+  id: string; // UUID primary key
+  name: string; // Author's full name
+  bio: string; // Author biography
+  birthDate: string; // Date of birth (YYYY-MM-DD)
+  isActive: boolean; // Author status
+}
+```
 
-## Support
+### Book Entity
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```typescript
+{
+  id: string; // UUID primary key
+  title: string; // Book title
+  description: string; // Book description
+  publicationYear: string; // Publication date (YYYY-MM-DD)
+  isAvailable: boolean; // Availability status
+}
+```
 
-## Stay in touch
+### Category Entity
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```typescript
+{
+  id: string; // UUID primary key
+  name: string; // Category name
+  description: string; // Category description
+}
+```
 
-## License
+### BookReview Entity
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+```typescript
+{
+  id: string; // UUID primary key
+  content: string; // Review content
+  rating: number; // Rating (1-5)
+  createdAt: string; // Review timestamp
+  bookId: string; // Foreign key to Book
+  userId: string; // Foreign key to User
+}
+```
+
+## API Security
+
+While the current implementation focuses on core functionality, the following security measures should be implemented for production use:
+
+### Authentication
+
+- JWT (JSON Web Token) based authentication
+- Secure password hashing with bcrypt
+- Token refresh mechanism
+
+### Authorization
+
+- Role-based access control (RBAC)
+- User vs. Admin permissions
+- Resource ownership validation
+
+### Data Protection
+
+- Input validation using class-validator
+- Sanitization of user inputs
+- SQL injection prevention via TypeORM
+
+### API Rate Limiting
+
+- Implement rate limiting to prevent abuse
+- Set appropriate limits for different endpoints
+
+### CORS Configuration
+
+- Configure Cross-Origin Resource Sharing policies
+- Restrict access to trusted domains
+
+## API Performance Optimization
+
+To ensure optimal API performance, consider implementing:
+
+1. **Response Caching**: Cache frequently accessed data
+2. **Pagination**: Implement pagination for list endpoints
+3. **Data Serialization**: Use DTOs to control response data
+4. **Eager/Lazy Loading**: Configure appropriate relation loading strategies
+5. **Database Indexing**: Index frequently queried fields
+
+## Development Workflow
+
+1. **Setup Development Environment**:
+
+   - Clone repository
+   - Install dependencies with `pnpm install`
+   - Configure local PostgreSQL database
+   - Create `.env` file with environment variables
+
+2. **Development Process**:
+
+   - Run in development mode with `pnpm run start:dev`
+   - Seed database with `pnpm run seed`
+   - Test API endpoints using the app.http file
+
+3. **Code Quality**:
+   - Format code with `pnpm run format`
+   - Lint code with `pnpm run lint`
+   - Write unit tests for new features
+   - Run tests with `pnpm run test`
+
+## Additional Documentation
+
+For more detailed information, please refer to the following documents:
+
+1. **[Quick Start Guide](./QUICK_START.md)**: Get up and running quickly with step-by-step instructions
+2. **[API Usage Examples](./API_USAGE.md)**: Detailed examples of API requests and responses
+3. **[Environment Configuration](./.env.example)**: Sample environment variables for configuration
+
+## NestJS Resources
+
+If you're new to NestJS or need additional references:
+
+- [NestJS Documentation](https://docs.nestjs.com) - Official framework documentation
+- [TypeORM Documentation](https://typeorm.io/) - Database ORM used in this project
+- [Class Validator](https://github.com/typestack/class-validator) - Validation library used for DTOs
