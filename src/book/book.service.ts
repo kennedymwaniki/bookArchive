@@ -16,7 +16,9 @@ export class BookService {
   }
 
   async findAll() {
-    return await this.bookRepository.find();
+    return await this.bookRepository.find({
+      relations: ['author', 'reviews', 'categories'],
+    });
   }
 
   async findOne(id: string) {
