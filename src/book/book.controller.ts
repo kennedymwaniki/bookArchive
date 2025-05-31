@@ -26,6 +26,15 @@ export class BookController {
     return this.bookService.findAll();
   }
 
+  @Get('search')
+  search(
+    @Query('title') title?: string,
+    @Query('author') author?: string,
+    @Query('category') category?: string,
+  ) {
+    return this.bookService.search({ title, author, category });
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.bookService.findOne(id);
@@ -39,14 +48,5 @@ export class BookController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.bookService.remove(id);
-  }
-
-  @Get('search')
-  search(
-    @Query('title') title?: string,
-    @Query('author') author?: string,
-    @Query('category') category?: string,
-  ) {
-    return this.bookService.search({ title, author, category });
   }
 }
